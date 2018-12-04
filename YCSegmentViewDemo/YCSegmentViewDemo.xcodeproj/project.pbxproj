@@ -81,10 +81,10 @@
 		588F56F421B5254E0083BFE2 /* YCSegmentView */ = {
 			isa = PBXGroup;
 			children = (
-				588F56F521B5254E0083BFE2 /* YCSegmentView.h */,
 				588F56F621B5254E0083BFE2 /* YCTitltBtnView.h */,
-				588F56F721B5254E0083BFE2 /* YCSegmentView.m */,
 				588F56F821B5254E0083BFE2 /* YCTitltBtnView.m */,
+				588F56F521B5254E0083BFE2 /* YCSegmentView.h */,
+				588F56F721B5254E0083BFE2 /* YCSegmentView.m */,
 			);
 			path = YCSegmentView;
 			sourceTree = "<group>";

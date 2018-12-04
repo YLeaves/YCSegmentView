@@ -112,10 +112,23 @@
     }
 }
 
-
-
+#pragma mark - Public
 -(void)scrollPageIndex:(NSInteger)index{
     self.segmentView.index = index;
+}
+
+#pragma mark - Setter
+
+-(void)setTitleNormalColor:(UIColor *)titleNormalColor{
+    self.segmentView.titleNormalColor = titleNormalColor;
+}
+
+-(void)setTitleSelectColor:(UIColor *)titleSelectColor{
+    self.segmentView.titleSelectColor = titleSelectColor;
+}
+
+-(void)setLineH:(CGFloat)lineH{
+    self.segmentView.lineH = lineH;
 }
 
 

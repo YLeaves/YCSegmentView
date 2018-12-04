@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#define kItemColor [UIColor colorWithRed:(67/255.0) green:(108 / 255.0) blue:(247 / 255.0) alpha:1]
+
+#define kItemNormalColor [UIColor grayColor]
+#define kItemSelectColor [UIColor blueColor]
 
 @protocol YCTitltBtnViewDelagate;
 
@@ -23,9 +25,20 @@
  */
 @property (nonatomic, assign) NSInteger index;
 
+//标题默认颜色
+@property (nonatomic, strong) UIColor *titleNormalColor;
+//标题选中颜色
+@property (nonatomic, strong) UIColor *titleSelectColor;
+//线高
+@property (nonatomic, assign) CGFloat lineH;
+//底线颜色（默认与title选中颜色一致）
+@property (nonatomic, strong) UIColor *lineColor;
+
+
+
 /**
  初始化方法
-
+ 
  @param frame 坐标位置
  @param array 按钮名称数组
  @return 实例对象

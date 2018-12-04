@@ -14,12 +14,10 @@
 #define ScreenW             [[UIScreen mainScreen] bounds].size.width
 
 
-
-
 @interface YCTitltBtnView (){
     NSArray *titleArray;
 }
-@property (nonatomic, strong) NSMutableArray  *btnArray;
+@property (nonatomic, strong) NSMutableArray  <UIButton*>*btnArray;
 @property (nonatomic, strong) UIButton        *titleButton;
 @property (nonatomic, strong) UIView          *line;
 
@@ -46,8 +44,8 @@
         btn.titleLabel.font = [UIFont systemFontOfSize:15];
         btn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [btn setTitle:titleArray[i] forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [btn setTitleColor:kItemColor forState:UIControlStateSelected];
+        [btn setTitleColor:kItemNormalColor forState:UIControlStateNormal];
+        [btn setTitleColor:kItemSelectColor forState:UIControlStateSelected];
         btn.frame = CGRectMake((btnW+magrin) * i+magrin, 0, btnW, btnH);
         [self addSubview:btn];
         [btn addTarget:self action:@selector(clickTitleButton:) forControlEvents:UIControlEventTouchUpInside];
@@ -93,11 +91,37 @@
 }
 
 
+#pragma mark - Setter
 
+-(void)setTitleNormalColor:(UIColor *)titleNormalColor{
+    [self.btnArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull btn, NSUInteger idx, BOOL * _Nonnull stop) {
+       [btn setTitleColor:titleNormalColor forState:UIControlStateNormal];
+    }];
+}
+
+-(void)setTitleSelectColor:(UIColor *)titleSelectColor{
+    [self.btnArray enumerateObjectsUsingBlock:^(UIButton * _Nonnull btn, NSUInteger idx, BOOL * _Nonnull stop) {
+        [btn setTitleColor:titleSelectColor forState:UIControlStateSelected];
+    }];
+    self.line.backgroundColor = titleSelectColor;
+}
+
+-(void)setLineH:(CGFloat)lineH{
+    if (lineH<0) {return;}
+    CGFloat h = lineH;
+    if (lineH>self.frame.size.height/3) {
+        h = self.frame.size.height/3;
+    }
+    
+    self.line.frame = CGRectMake(self.line.frame.origin.x, self.frame.size.height - h, self.line.frame.size.width, h);
+}
+
+
+#pragma mark - Lazy
 -(UIView *)line{
     if (!_line) {
         _line = [[UIView alloc]init];
-        _line.backgroundColor = kItemColor;
+        _line.backgroundColor = kItemSelectColor;
         [self addSubview:_line];
     }
     return _line;

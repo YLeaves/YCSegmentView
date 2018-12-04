@@ -7,7 +7,7 @@
 //
 
 #import "YCSegmentView.h"
-
+#import "YCTitltBtnView.h"
 
 @interface YCSegmentView()<UIPageViewControllerDataSource, UIPageViewControllerDelegate,YCTitltBtnViewDelagate>{
     __block NSInteger flag;
@@ -39,7 +39,7 @@
     
     [self.dataSource removeAllObjects];
     [self.dataSource addObjectsFromArray:controllers];
-
+    
     self.pageViewController.view.frame = CGRectMake(0, CGRectGetMaxY(self.segmentView.frame), self.frame.size.width, self.frame.size.height - self.segmentView.frame.size.height);
     [self addSubview:self.pageViewController.view];
     
@@ -112,10 +112,23 @@
     }
 }
 
-
-
+#pragma mark - Public
 -(void)scrollPageIndex:(NSInteger)index{
     self.segmentView.index = index;
+}
+
+#pragma mark - Setter
+
+-(void)setTitleNormalColor:(UIColor *)titleNormalColor{
+    self.segmentView.titleNormalColor = titleNormalColor;
+}
+
+-(void)setTitleSelectColor:(UIColor *)titleSelectColor{
+    self.segmentView.titleSelectColor = titleSelectColor;
+}
+
+-(void)setLineH:(CGFloat)lineH{
+    self.segmentView.lineH = lineH;
 }
 
 

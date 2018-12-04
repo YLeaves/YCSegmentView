@@ -34,6 +34,11 @@
     
     YCSegmentView *segmentView = [[YCSegmentView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height - 20) TitltArray:titles childControllers:vcArr];
     segmentView.delegate = self;
+    //自定义设置segment
+    segmentView.titleNormalColor = [UIColor grayColor];
+    segmentView.titleSelectColor = [UIColor redColor];
+    segmentView.lineH = 2;
+    
     [self.view addSubview:segmentView];
     
 }
