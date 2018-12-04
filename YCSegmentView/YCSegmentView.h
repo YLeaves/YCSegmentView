@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "YCTitltBtnView.h"
 
 @class YCSegmentView;
 

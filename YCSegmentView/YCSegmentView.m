@@ -7,7 +7,7 @@
 //
 
 #import "YCSegmentView.h"
-#import "YCTitltBtnView.h"
+
 
 @interface YCSegmentView()<UIPageViewControllerDataSource, UIPageViewControllerDelegate,YCTitltBtnViewDelagate>{
     __block NSInteger flag;
