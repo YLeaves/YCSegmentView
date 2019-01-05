@@ -8,8 +8,8 @@ YCSegmentView 是基于UIPageViewController实现的分页视图<br>
 ----
 【使用CocoaPods】
 
-pod 'YCSegmentView', ''
+pod 'YCSegmentView', '0.1.5'
 
 
 --------
-通过该库演示了创建cocoapods 开源库的流程->简书地址(https://www.jianshu.com/p/00d2fe9c213a)
+通过该库演示了创建cocoapods 开源库的流程->[简书地址](https://www.jianshu.com/p/00d2fe9c213a)
